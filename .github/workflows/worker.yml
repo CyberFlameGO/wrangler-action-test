@@ -15,6 +15,7 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           command: publish
           workingDirectory: worker
+          wranglerVersion: beta
           secrets: |
             SECRET
         env:
