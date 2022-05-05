@@ -15,6 +15,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages pages publish --project-name=direct-uploads
+          command: pages publish --project-name=direct-uploads
           wranglerVersion: beta
           workingDirectory: pages
