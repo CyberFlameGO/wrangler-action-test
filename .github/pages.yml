@@ -1,0 +1,17 @@
+on:
+  push:
+    paths:
+      - 'pages/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish app
+        uses: WalshyDev/wrangler-action@walshy/pages-996-support-wrangler2
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          command: pages deployment list --project=test
+          workingDirectory: pages
